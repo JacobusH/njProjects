@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "nj-components": [
+        "dist/nj-components"
+      ],
+      "nj-components/*": [
+        "dist/nj-components/*"
+      ]
+    }
   }
 }
