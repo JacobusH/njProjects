@@ -20,11 +20,15 @@
     ],
     "paths": {
       "nj-components": [
-        "dist/nj-components"
-      ],
-      "nj-components/*": [
-        "dist/nj-components/*"
+        "projects/nj-components/src/public_api"
       ]
     }
   }
 }
+
+// "nj-components": [
+//   "dist/nj-components"
+// ],
+// "nj-components/*": [
+//   "dist/nj-components/*"
+// ], 

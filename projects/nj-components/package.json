@@ -2,7 +2,11 @@
   "name": "nj-components",
   "version": "0.0.1",
   "peerDependencies": {
+    "@angular/animations": "~7.2.0",
+    "@angular/cdk": "^7.3.7",
     "@angular/common": "^7.2.0",
-    "@angular/core": "^7.2.0"
+    "@angular/core": "^7.2.0",
+    "@angular/platform-browser": "~7.2.0",
+    "uuid": "^3.3.2"
   }
 }

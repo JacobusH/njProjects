@@ -1,3 +1,18 @@
-<p>
-  bug-tracker works!
-</p>
+<div class="top-bar">
+  <div class="name-cont">
+    <button (click)="toggleList()">New List</button>
+    <nj-input-float @slideInOut *ngIf="showListMake" [label]="'name'" (save)="addList($event)"></nj-input-float>
+  </div>
+</div>
+
+<div class="lists" cdkDropListGroup>
+  <div class="list" *ngFor="let list of btLists; let listIdx = index">
+    <div class="title">{{list.name}}</div> 
+    <div [cdkDropListData]="list.items" (cdkDropListDropped)="drop($event)" cdkDropList>
+      <div class="pop" *ngFor="let item of list.items; let itemIdx = index" cdkDrag>
+        {{item.text}}
+      </div> 
+      <nj-input-float [label]="'Add Item'" (save)="addItem($event, list)"></nj-input-float>
+    </div> 
+  </div>
+</div>

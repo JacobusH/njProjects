@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NjComponentsComponent } from './nj-components.component';
+import { InputFloatComponent } from './input-float.component';
 
-describe('NjComponentsComponent', () => {
-  let component: NjComponentsComponent;
-  let fixture: ComponentFixture<NjComponentsComponent>;
+describe('InputFloatComponent', () => {
+  let component: InputFloatComponent;
+  let fixture: ComponentFixture<InputFloatComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NjComponentsComponent ]
+      declarations: [ InputFloatComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NjComponentsComponent);
+    fixture = TestBed.createComponent(InputFloatComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

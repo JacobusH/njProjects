@@ -1,0 +1,6 @@
+<div class="float-container" [class.active]="isLabelActive">
+  <label for="floatField">{{label}}</label>
+  <input id="floatField" type="text" 
+  (blur)="labelBlur()" (focus)="labelFocus()" 
+  (keydown.enter)="onSave($event)" />
+</div>
