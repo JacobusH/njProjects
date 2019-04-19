@@ -14,30 +14,23 @@ import { slideInOut } from '../animations/slideInOut.animation';
 }) 
 export class BugTrackerComponent implements OnInit {
   btLists: Array<BTList>;
-  btListIDs: Array<string>;
-  isLabelActive: boolean; 
-  showListMake: boolean;
+  showListMake; 
+  
 
   constructor(private btService: BugTrackerService) { 
-    this.isLabelActive = false;
-    this.showListMake = false;
-    this.btListIDs = ['cdk-drop-list-1', 'cdk-drop-list-1']
-    this.btLists = [
-      {
-        key: uuid(),
-        name: 'listy',
-        items: [ this.btService.createDefaultItem() ]
-      } 
-    ];
-  }
+    this.btService.btLists = [ this.btService.createDefaultList("listy") ]
+    this.btLists = this.btService.btLists
+  } 
 
   ngOnInit() {
+    this.btService.showListMake$.subscribe(x => {
+      console.log('showlistmake', x)
+      this.showListMake = x;
+    })
     
   }
 
-  // CdkDragDrop<string[]> 
   drop(event: any) {
-    console.log('trans', event)
     if (event.previousContainer !== event.container) {
       transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex)
     } 
@@ -46,18 +39,25 @@ export class BugTrackerComponent implements OnInit {
     }
   }
 
-  toggleList() {
-    this.showListMake = !this.showListMake
+  toggleNewListName() {
+    this.btService.toggleNewListName()
   }
 
   // Input Box
   addItem(itemName: string, list: BTList) {
-    let tmp: BTItem = this.btService.createDefaultItem(itemName)
-    list.items.push(tmp)
+    this.btService.addItem(itemName, list)
   }
 
   addList(listName: string) {
-    let tmp = this.btService.createDefaultList(listName)
-    this.btLists.push(tmp)
+    this.btService.addList(listName)
+  }
+
+  // Edit box
+  itemEdited(item: BTItem) {
+
+  }
+
+  itemDeleted(item: BTItem) {
+    this.btService.removeItem(item)
   }
 }

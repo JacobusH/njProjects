@@ -6,6 +6,7 @@ export interface BTList {
 
 export interface BTItem {
   key: string,
+  listKey: string,
   parent: BTItem, 
   children: Array<BTItem>,
   colorBackground: string, // hex code

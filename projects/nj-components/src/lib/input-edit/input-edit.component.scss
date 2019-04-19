@@ -1,0 +1,14 @@
+.edit-cont {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  .area-edit {
+    input {
+      border: none;
+    }
+  }
+  .area-del {
+    cursor: pointer;
+  }
+}

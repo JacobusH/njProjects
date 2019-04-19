@@ -10,11 +10,13 @@ import { BugTrackerComponent } from './bug-tracker/bug-tracker.component';
 // services
 import { BugTrackerService } from './bug-tracker/bug-tracker.service';
 import { InputFloatComponent } from './input-float/input-float.component';
+import { InputEditComponent } from './input-edit/input-edit.component';
 
 @NgModule({
   declarations: [
     BugTrackerComponent,
-    InputFloatComponent
+    InputFloatComponent,
+    InputEditComponent
   ],
   providers: [
     BugTrackerService

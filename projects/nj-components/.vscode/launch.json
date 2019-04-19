@@ -7,9 +7,24 @@
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Launch Chromium against localhost",
+      "name": "Launch Chromium against localhost r2",
       "url": "http://localhost:4200/#",
       "webRoot": "${workspaceFolder}",
+      "runtimeExecutable": "/usr/bin/chromium",
+      "sourceMapPathOverrides": {
+        "webpack:///*": "${webRoot}"
+      },
+      "skipFiles": [
+        "node_modules",
+        "*.html"
+      ]
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chromium against localhost",
+      "url": "http://localhost:4200/#",
+      "webRoot": "${workspaceFolder}/projects/nj-components/",
       "runtimeExecutable": "/usr/bin/chromium",
       "runtimeArgs": [
         "--new-window",
@@ -17,6 +32,9 @@
         "--remote-debugging-port=9222",
         "--disable-background-networking"
       ],
+      "sourceMapPathOverrides": {
+        "webpack:///*": "/InnerTome/Projects/njprojects/projects/nj-components/src/lib/*"
+      },
       "skipFiles": [
         "node_modules",
         "*.html"

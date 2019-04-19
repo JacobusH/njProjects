@@ -1,6 +1,6 @@
 <div class="top-bar">
   <div class="name-cont">
-    <button (click)="toggleList()">New List</button>
+    <button (click)="toggleNewListName()">New List</button>
     <nj-input-float @slideInOut *ngIf="showListMake" [label]="'name'" (save)="addList($event)"></nj-input-float>
   </div>
 </div>
@@ -10,7 +10,8 @@
     <div class="title">{{list.name}}</div> 
     <div [cdkDropListData]="list.items" (cdkDropListDropped)="drop($event)" cdkDropList>
       <div class="pop" *ngFor="let item of list.items; let itemIdx = index" cdkDrag>
-        {{item.text}}
+        <div class="bt-color">boo</div>
+        <nj-input-edit [item]="item" (change)="itemEdited($event)" (delete)="itemDeleted($event)"></nj-input-edit>
       </div> 
       <nj-input-float [label]="'Add Item'" (save)="addItem($event, list)"></nj-input-float>
     </div> 
