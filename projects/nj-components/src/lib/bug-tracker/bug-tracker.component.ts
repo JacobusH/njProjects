@@ -15,6 +15,7 @@ import { slideInOut } from '../animations/slideInOut.animation';
 export class BugTrackerComponent implements OnInit {
   btLists: Array<BTList>;
   showListMake; 
+  showColorSelector = false;
   
 
   constructor(private btService: BugTrackerService) { 
@@ -59,5 +60,10 @@ export class BugTrackerComponent implements OnInit {
 
   itemDeleted(item: BTItem) {
     this.btService.removeItem(item)
+  }
+
+  // Colors
+  colorChanged(newColor: string) {
+    
   }
 }

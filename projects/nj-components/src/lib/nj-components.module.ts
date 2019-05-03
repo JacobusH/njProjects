@@ -6,6 +6,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 
 // components
 import { BugTrackerComponent } from './bug-tracker/bug-tracker.component';
+import { SimpleColorSelectorComponent } from './simple-color-selector/simple-color-selector.component';
 
 // services
 import { BugTrackerService } from './bug-tracker/bug-tracker.service';
@@ -16,7 +17,8 @@ import { InputEditComponent } from './input-edit/input-edit.component';
   declarations: [
     BugTrackerComponent,
     InputFloatComponent,
-    InputEditComponent
+    InputEditComponent,
+    SimpleColorSelectorComponent
   ],
   providers: [
     BugTrackerService

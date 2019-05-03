@@ -1,0 +1,11 @@
+<div class="color-container">
+  <!-- Display portion -->
+  <div class="color" [style.background-color]="curColor" (click)="showColorSelector = !showColorSelector"></div>
+  <!-- Selector portion -->
+  <div *ngIf="showColorSelector" class="color-selector">
+    <div *ngFor="let color of savedColors">
+      <div class="color" [style.background-color]="color" (click)="emitColor(color)"></div>
+    </div>
+    <nj-input-float [label]="'New Hex'" (save)="addColor($event)"></nj-input-float>
+  </div>
+</div>

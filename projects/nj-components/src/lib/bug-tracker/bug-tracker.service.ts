@@ -56,7 +56,7 @@ export class BugTrackerService {
       if(list.key == item.listKey) {
         for(let i = 0; i < list.items.length; i++) {
           if(item.key == list.items[i].key) {
-            list.items.splice(i, i + 1)
+            list.items.splice(i, i + 1) 
           }
         }
       }

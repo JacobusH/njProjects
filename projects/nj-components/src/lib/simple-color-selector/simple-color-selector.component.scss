@@ -1,0 +1,25 @@
+.color {
+  width: 100%;
+  height: 30px;
+}
+
+.color-container {
+  position: relative; 
+  
+  .color-selector {
+    position: absolute;
+    left: -150px;
+    top: 0px;
+    z-index: 1;
+    background: white;
+    width: 120px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
+  /deep/ .float-container {
+    width: 80%;
+    margin-top: 2px;
+  }
+}
