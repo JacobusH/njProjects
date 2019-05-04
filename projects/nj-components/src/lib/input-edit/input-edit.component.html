@@ -1,9 +1,6 @@
-<div class="edit-cont">
+<div class="edit-cont"(mouseover)="isFocused = true" (mouseout)="isFocused = false">
   <div class="area-edit">
-    <input type="text" [value]="item.text" (change)="onTextChange($event)" 
-    (focus)="isFocused = true" (focusout)="isFocused = false"/>
+    <input type="text" [value]="item.text" (change)="onTextChange($event)" />
+    <span class="area-del" [hidden]="!isFocused" (click)="onDelete()">&#9447;</span>
   </div> 
-  <div class="area-del">
-      <span *ngIf="isFocused" (click)="onDelete()">&#9447;</span>
-  </div>
 </div> 

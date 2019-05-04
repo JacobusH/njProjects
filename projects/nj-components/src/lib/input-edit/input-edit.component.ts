@@ -29,7 +29,8 @@ export class InputEditComponent implements OnInit {
   }
 
   onDelete() {
-    this.emitDelete.emit(this.item)
+    console.log("ondelete");
+    this.emitDelete.emit(this.item);
   }
 
 

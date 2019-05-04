@@ -52,6 +52,7 @@ export class BugTrackerService {
   }
 
   removeItem(item: BTItem) {
+    console.log(item)
     this.btLists.forEach(list => {
       if(list.key == item.listKey) {
         for(let i = 0; i < list.items.length; i++) {
